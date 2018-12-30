@@ -6,7 +6,11 @@ namespace OxfessAnalytica
 {
     public class OxfessAsResult : OxfessResult
     {
-        public string As { get; }
+        public string As { get; set; }
+
+        public OxfessAsResult() : base()
+        {
+        }
 
         public OxfessAsResult(Post post) : base(post)
         {

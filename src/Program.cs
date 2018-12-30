@@ -20,6 +20,16 @@ namespace OxfessAnalytica
             WriteJson(posts, "../data/posts.json");
             WriteCsv(posts, "../data/posts.csv");
         }
+
+        private static IEnumerable<T> ReadJson<T>(string fileName)
+        {
+            using (var reader = new StreamReader(fileName))
+            using (var jsonTextReader = new JsonTextReader(reader))
+            {
+                var serializer = new JsonSerializer();
+                return serializer.Deserialize<IEnumerable<T>>(jsonTextReader);
+            }
+        }
         
         private static void WriteJson<T>(IEnumerable<T> results, string fileName)
         {

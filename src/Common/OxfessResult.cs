@@ -5,13 +5,17 @@ namespace OxfessAnalytica.Common
 {
     public class OxfessResult
     {
-        public string Id { get; }
-        public DateTime Created { get; }
-        public string OxfessId { get; }
-        public string Message { get; }
-        public string Permalink { get; }
+        public string Id { get; set; }
+        public DateTime Created { get; set; }
+        public string OxfessId { get; set; }
+        public string Message { get; set; }
+        public string Permalink { get; set; }
         public int NumberOfReactions { get; set; }
         public int NumberOfComments { get; set; }
+
+        public OxfessResult()
+        {
+        }
 
         public OxfessResult(Post post)
         {
